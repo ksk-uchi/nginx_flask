@@ -1,0 +1,15 @@
+FROM python:3.6.4
+
+RUN apt-get update && apt-get upgrade -y
+
+COPY ./requirements.txt /var/www/requirements.txt
+
+WORKDIR /var/www
+
+RUN pip install -r ./requirements.txt
+
+WORKDIR /var/www/app
+
+EXPOSE 8080
+
+CMD python app.py

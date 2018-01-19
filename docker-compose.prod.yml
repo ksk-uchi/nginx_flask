@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    nginx:
+        build:
+            context: ./Nginx
+            dockerfile: dockerfile.prod
+        ports:
+            - 80:80
+    flask:
+        build:
+            context: ./Flask
+            dockerfile: dockerfile.prod

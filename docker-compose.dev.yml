@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    nginx:
+        build:
+            context: ./Nginx
+            dockerfile: dockerfile.dev
+        ports:
+            - 80:80
+    flask:
+        build:
+            context: ./Flask
+            dockerfile: dockerfile.dev
+        volumes:
+            - ./Flask/src:/var/www/app
